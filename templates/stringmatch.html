@@ -1,0 +1,20 @@
+<h3>Student Names:</h3>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>City</th>
+        <th>Status</th>
+    </tr>
+    {% for student in studentDetails %}
+    <tr>
+        <td>{{student[0]}}</td>
+        <td>{{student[1]}}</td>
+        <td>{{student[2]}}</td>
+        <td>{{student[3]}}</td>
+        <td>{{student[4]}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<p>{{nameList}}</p>

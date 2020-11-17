@@ -1,0 +1,70 @@
+<div>
+    <form action="/process2" method="POST">
+        <input type="text" name="user_input" />
+        <input type="range" min="50" max="100" value="75" id="myrange" name="input_value"><br><br>
+        <p>Value: <span id="value"></span></p>
+        <input type="submit" />
+    </form>
+    <section class="parent">
+        <table border="1" class="child">
+            <tr>
+                <th>Name</th>
+            </tr>
+            {% for match in match_name_list %}
+            <tr>
+                <td> {{match}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table border="1" class="child">
+            <tr>
+                <th>Score</th>
+            </tr>
+            {% for score in name_score_list %}
+            <tr>
+                <td> {{score}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+</div>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .child {
+        border: 5px solid black;
+    }
+
+    .parent {
+        display: flex;
+    }
+
+    #myrange {
+        cursor: pointer;
+    }
+
+    #myrange::after {
+        content: '100';
+        position: absolute;
+        left: 22%;
+        top: 5%;
+    }
+
+    #myrange::before {
+        content: '50';
+        position: absolute;
+        top: 5%;
+    }
+</style>
+
+<script>
+    var slider = document.getElementById('myrange');
+    var output = document.getElementById('value');
+    output.innerHTML = slider.value;
+    slider.oninput = function () {
+        output.innerHTML = this.value;
+    }
+</script>
