@@ -4,10 +4,16 @@ from fuzzywuzzy import fuzz, process
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = "localhost"
-app.config['MYSQL_USER'] = "root"
-app.config['MYSQL_PASSWORD'] = ""
-app.config['MYSQL_DB'] = "users_db"
+#app.config['MYSQL_HOST'] = "localhost"
+#app.config['MYSQL_USER'] = "root"
+#app.config['MYSQL_PASSWORD'] = ""
+#app.config['MYSQL_DB'] = "users_db"
+
+app.config['MYSQL_HOST'] = "us-cdbr-east-02.cleardb.com"
+app.config['MYSQL_USER'] = "bdb017c19f4bfb"
+app.config['MYSQL_PASSWORD'] = "c5da4192"
+app.config['MYSQL_DB'] = "heroku_e2fc23292ab9bde"
+
 
 mysql = MySQL(app)
 
